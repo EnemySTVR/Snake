@@ -8,7 +8,7 @@ namespace Snake
     {
         protected List<Point> pointList;
 
-        public bool IsHit(Figure figure)
+        public virtual bool IsHit(Figure figure)
         {
             foreach (var point in pointList)
             {
@@ -31,11 +31,11 @@ namespace Snake
             }
             return false;
         }
-        public void Drow()
+        public void Draw()
         {
             foreach (var point in pointList)
             {
-                point.Drow();
+                point.Draw();
             }
         }
     }

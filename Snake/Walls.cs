@@ -6,7 +6,7 @@ namespace Snake
 {
     class Walls : Figure
     {
-        List<Figure> wallList;
+        private readonly List<Figure> wallList;
         public Walls(int xLength, int yLength)
         {
             wallList = new List<Figure>();
@@ -20,7 +20,7 @@ namespace Snake
             wallList.Add(bottomLine);
         }
 
-        public bool IsHit(Figure figure)
+        public override bool IsHit(Figure figure)
         {
             foreach (var wall in wallList)
             {
@@ -32,11 +32,11 @@ namespace Snake
             return false;
         }
 
-        public void Drow()
+        public void Draw()
         {
             foreach (var wall in wallList)
             {
-                wall.Drow();
+                wall.Draw();
             }
         }
     }

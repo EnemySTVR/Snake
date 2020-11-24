@@ -31,16 +31,16 @@ namespace Snake
             switch (direction)
             {
                 case Direction.Left:
-                    x = x - step;
+                    x -= step;
                     break;
                 case Direction.Right:
-                    x = x + step;
+                    x += step;
                     break;
                 case Direction.Up:
-                    y = y - step;
+                    y -= step;
                     break;
                 case Direction.Down:
-                    y = y + step;
+                    y += step;
                     break;
             }
         }
@@ -53,10 +53,10 @@ namespace Snake
         public void Clear()
         {
             sym = ' ';
-            Drow();
+            Draw();
         }
 
-        public void Drow()
+        public void Draw()
         {
             Console.SetCursorPosition(x, y);
             Console.Write(sym);

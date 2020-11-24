@@ -27,7 +27,7 @@ namespace Snake
             {
                 food.Clear();
                 food = head;
-                food.Drow();
+                food.Draw();
                 pointList.Add(food);
                 return true;
             }
@@ -79,7 +79,7 @@ namespace Snake
             pointList.Add(head);
 
             tail.Clear();
-            head.Drow();
+            head.Draw();
         }
 
         private Point GetNextPoint()
