@@ -7,7 +7,9 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Console.SetWindowSize(80, 25);
+            int count = 0;
+            ShowCounter(count);
+            Console.SetWindowSize(80, 26);
             Console.CursorVisible = false;
 
             var walls = new Walls(80, 25);
@@ -30,6 +32,8 @@ namespace Snake
                 }
                 if (snake.Eat(food))
                 {
+                    count++;
+                    ChangeCounter(count);
                     food = foodCreator.CreateFood();
                     food.Drow();
                 }
@@ -51,6 +55,24 @@ namespace Snake
             Console.WriteLine("Game Over!");
         }
 
-        
+
+        static void ChangeCounter(int count)
+        {
+            ClearCounterRow();
+            ShowCounter(count);
+        }
+        static void ShowCounter(int count)
+        {
+            Console.SetCursorPosition(0, 25);
+            Console.Write($"Count: {count}");
+        }
+        static void ClearCounterRow()
+        {
+            Console.SetCursorPosition(0, 25);
+            for (int i = 0; i < 80; i++)
+            {
+                Console.Write(' ');
+            }
+        }
     }
 }
