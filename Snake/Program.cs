@@ -7,8 +7,6 @@ namespace Snake
     {
         static void Main()
         {
-            var counter = new Counter();
-            ShowCounter(counter.GetCount());
             Console.SetWindowSize(80, 26);
             Console.CursorVisible = false;
 
@@ -19,6 +17,8 @@ namespace Snake
 
             var snake = new Snake(startPoint, 4, Direction.Right);
             snake.Draw();
+
+            ShowCounter(snake.GetCount());
 
             var foodCreator = new FoodCreator(80, 25, '$');
             var food = foodCreator.CreateFood();
@@ -32,8 +32,7 @@ namespace Snake
                 }
                 if (snake.Eat(food))
                 {
-                    counter.IncreaseCount();
-                    ChangeCounter(counter.GetCount());
+                    ChangeCounter(snake.GetCount());
                     food = foodCreator.CreateFood();
                     food.Draw();
                 }

@@ -8,8 +8,10 @@ namespace Snake
     class Snake : Figure
     {
         private Direction direction;
+        private int count;
         public Snake(Point tail, int length, Direction direction)
         {
+            count = 0;
             this.direction = direction;
             pointList = new List<Point>();
             for (int i = 0; i < length; i++)
@@ -29,6 +31,7 @@ namespace Snake
                 food = head;
                 food.Draw();
                 pointList.Add(food);
+                count++;
                 return true;
             }
             else
@@ -82,6 +85,10 @@ namespace Snake
             head.Draw();
         }
 
+        public int GetCount()
+        {
+            return count;
+        }
         private Point GetNextPoint()
         {
             var head = pointList.Last();
