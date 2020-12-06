@@ -7,6 +7,8 @@ namespace Snake
     {
         static void Main()
         {
+            int test = 0;
+            
             Console.SetWindowSize(80, 26);
             Console.CursorVisible = false;
 
