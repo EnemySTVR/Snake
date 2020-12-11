@@ -7,9 +7,7 @@ namespace Snake
     {
         static void Main()
         {
-            int test = 0;
-            
-            Console.SetWindowSize(80, 26);
+            System.Console.SetWindowSize(80, 26);
             Console.CursorVisible = false;
 
             var walls = new Walls(80, 25);
